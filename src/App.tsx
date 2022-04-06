@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Greet} from './components/Greet'
+import {Person} from './components/Person'
+import {PersonList} from './components/PersonList'
+import {Oscar} from './components/Oscar'
+import {Heading} from './components/Heading'
+import {Button}  from './components/Button'
+import {Input} from './components/Input'
+
 
 function App() {
+  const personname={
+    first:'hi',
+    last:'hello'
+  }
+
+  const personNameList=[{
+    first:'adarh',
+    last:'D'
+  },
+  {first:'akshay',
+  last:'V'
+}
+]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Greet name='Sadarsh'/>
+      <Person name={personname}/>
+      <PersonList names={personNameList}/>
+      <Oscar>
+        won oscar award
+      </Oscar>
+      <Heading>
+      <Oscar>
+       movie titanic
+      </Oscar>
+      </Heading>
+      <Button  handleClick={(event,id)=>console.log('clicked',event,id)}/>
+      <Input value='' handleChange={(event)=>
+      console.log(event)}/>
     </div>
   );
 }
 
 export default App;
+ 
